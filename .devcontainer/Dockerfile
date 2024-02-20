@@ -20,9 +20,6 @@ RUN . /etc/os-release \
 # ARG EXTRA_NODE_VERSION=10
 # RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
 
-# [Optional] Uncomment if you want to install more global node modules
-# RUN su node -c "npm install -g <your-package-list-here>"
-
 # Loads Git's bash-completion script:
 RUN echo "source /usr/share/bash-completion/completions/git" >> /etc/bash.bashrc
 
@@ -31,5 +28,11 @@ RUN echo "source <(npm completion)" >> /etc/bash.bashrc
 
 # Loads Node's bash-completion script:
 RUN echo "source <(node --completion-bash)" >> /etc/bash.bashrc
+
+# Installs global node modules:
+RUN su node -c "npm install -g @angular/cli@17"
+
+# Loads Angular's bash-completion script:
+RUN echo "source <(ng completion script)" >> /etc/bash.bashrc
 
 
