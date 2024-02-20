@@ -11,8 +11,10 @@ RUN . /etc/os-release \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # [Optional] Uncomment this section to install additional OS packages.
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
+# RUN echo "Instalando pacotes sobre o Debian..." \
+#     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends bash \
+#     && echo "Pacotes de SO instalados com sucesso!"
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
@@ -21,5 +23,13 @@ RUN . /etc/os-release \
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 
+# Loads Git's bash-completion script:
+RUN echo "source /usr/share/bash-completion/completions/git" >> /etc/bash.bashrc
+
+# Loads NPM's bash-completion script:
+RUN echo "source <(npm completion)" >> /etc/bash.bashrc
+
+# Loads Node's bash-completion script:
+RUN echo "source <(node --completion-bash)" >> /etc/bash.bashrc
 
 
