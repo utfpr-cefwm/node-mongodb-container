@@ -2,7 +2,11 @@
   "name": "@nx-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run-many --target=serve --projects=front --parallel",
+    "build": "nx run-many --target=build --projects=front",
+    "test": "nx run-many --target=test --projects=front"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.2.0",
