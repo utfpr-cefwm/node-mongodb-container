@@ -18,7 +18,8 @@
 				"mongodb.mongodb-vscode",
 				"Angular.ng-template",
 				"eamodio.gitlens",
-				"EditorConfig.EditorConfig"
+				"EditorConfig.EditorConfig",
+				"nrwl.angular-console"
 			]
 		}
 	}
