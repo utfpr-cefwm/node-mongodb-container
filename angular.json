@@ -60,6 +60,7 @@
               "buildTarget": "angular17-app:build:production"
             },
             "development": {
+              "host": "0.0.0.0",
               "buildTarget": "angular17-app:build:development"
             }
           },
