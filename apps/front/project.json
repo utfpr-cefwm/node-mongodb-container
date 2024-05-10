@@ -50,6 +50,7 @@
           "buildTarget": "front:build:production"
         },
         "development": {
+          "host": "0.0.0.0",
           "buildTarget": "front:build:development"
         }
       },
